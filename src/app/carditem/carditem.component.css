@@ -1,0 +1,9 @@
+.card{
+    margin: 1rem;
+}
+.junior{
+    background-color: grey;
+}
+.senior{
+    background-color: coral;
+}
