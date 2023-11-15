@@ -3,12 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ToolbarComponent } from './toolbar/toolbar.component';
-import { FooterComponent } from './footer/footer.component';
-import { HelpcenterComponent } from './helpcenter/helpcenter.component';
-import { LandingpageComponent } from './landingpage/landingpage.component';
-import { ListitemsComponent } from './listitems/listitems.component';
-import { CarditemComponent } from './carditem/carditem.component';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HelpcenterComponent } from './components/helpcenter/helpcenter.component';
+import { LandingpageComponent } from './components/landingpage/landingpage.component';
+import { ListitemsComponent } from './components/listitems/listitems.component';
+import { CarditemComponent } from './components/carditem/carditem.component';
+import { DeeperDirectivesComponent } from './components/deeper-directives/deeper-directives.component';
+import { HighlightedDirective } from './directives/highlighted.directive';
+import { NgxUnlessDirective } from './directives/ngx-unless.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { CarditemComponent } from './carditem/carditem.component';
     HelpcenterComponent,
     LandingpageComponent,
     ListitemsComponent,
-    CarditemComponent
+    CarditemComponent,
+    DeeperDirectivesComponent,
+    HighlightedDirective,
+    NgxUnlessDirective
   ],
   imports: [
     BrowserModule,

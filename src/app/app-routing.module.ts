@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LandingpageComponent } from './landingpage/landingpage.component';
-import { HelpcenterComponent } from './helpcenter/helpcenter.component';
-import { ListitemsComponent } from './listitems/listitems.component';
+import { LandingpageComponent } from './components/landingpage/landingpage.component';
+import { HelpcenterComponent } from './components/helpcenter/helpcenter.component';
+import { ListitemsComponent } from './components/listitems/listitems.component';
+import { DeeperDirectivesComponent } from './components/deeper-directives/deeper-directives.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'employees',
     component: ListitemsComponent
+  },
+  {
+    path: 'deeper-directives',
+    component: DeeperDirectivesComponent
   }
 ];
 

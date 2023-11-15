@@ -1,9 +1,0 @@
-<h1>Lista de empleados</h1>
-<div class="list">
-    <ng-container *ngFor="let employee of employees;">
-             <app-carditem [employee]="employee" (employeeSelected)="onEmployeeChecked($event)"></app-carditem>
-    </ng-container>
-</div>
-
-<h4 *ngIf="selectedEmployee">Empleado seleccionado: {{selectedEmployee.name}}</h4>
-<h4 #todayRef>Hoy: {{today | date:'dd/MM/YYYY'}}</h4>

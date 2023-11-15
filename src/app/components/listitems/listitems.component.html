@@ -1,0 +1,14 @@
+<h1>Lista de empleados</h1>
+<div class="list">
+    
+    <ng-container *ngFor="let employee of employees;">
+             <app-carditem #component [employee]="employee" (employeeSelected)="onEmployeeChecked($event)">
+                <h4 #employeeContent1 class="content1">Content projection 1</h4>
+                <h4 #employeeContent1 class="content2">Content projection 2</h4>
+                <h4>Content projection 3</h4>
+             </app-carditem>
+    </ng-container>
+</div>
+
+<h4 *ngIf="selectedEmployee">Empleado seleccionado: {{selectedEmployee.name}}</h4>
+<h4 #todayRef>Hoy: {{today | date:'dd/MM/YYYY'}}</h4>

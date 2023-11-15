@@ -20,6 +20,14 @@
     margin: 0;
   }
 
+  :host-context(.blue-theme) .welcome{
+    color: blue;
+  }
+
+  :host-context(.red-theme) .welcome{
+    color: red;
+  }
+
   .spacer {
     flex: 1;
   }

@@ -1,0 +1,15 @@
+<div [appHighlighted]="true">
+    <form>
+        <input type="text" value="" required>
+        <input type="submit" disabled value="Enviar">
+    </form>
+</div>
+
+<div>--------------------</div>
+<p *appNgxUnless="true">Prueba de una directiva estructural</p>
+<div [appHighlighted]="false">
+    <form>
+        <input type="text" value="" required>
+        <input type="submit" disabled value="Enviar">
+    </form>
+</div>

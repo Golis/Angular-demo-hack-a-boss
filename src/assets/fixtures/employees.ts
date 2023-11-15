@@ -23,7 +23,7 @@ export const employees: any =[
         id: 3,
         name: "Uxía",
         description: "Ingeniera informática",
-        iconUrl: "/assets/img_avatar_chica.jpg",
+        //iconUrl: "/assets/img_avatar_chica.jpg",
         sex: "femenino",
         role: "Arquitecta software",
         isactive: true,

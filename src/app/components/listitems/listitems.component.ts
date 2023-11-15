@@ -1,7 +1,8 @@
 import { DatePipe } from '@angular/common';
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { employees } from 'src/assets/fixtures/employees';
 import { Employee } from 'src/models/employee';
+import { CarditemComponent } from '../carditem/carditem.component';
 
 @Component({
   selector: 'app-listitems',
@@ -10,6 +11,10 @@ import { Employee } from 'src/models/employee';
 })
 export class ListitemsComponent {
   @ViewChild('todayRef') todayRef?:ElementRef;
+
+  @ViewChildren('component')
+  cards!: QueryList<CarditemComponent>;
+
   selectedEmployee?: Employee;
   employees = employees;
   today = new Date();
@@ -37,7 +42,8 @@ export class ListitemsComponent {
     this.text = this.todayRef?.nativeElement.innerText;
     this.text = this.datepipe.transform(new Date(this.today.setDate(this.today.getDate() +1)), 'dd/MM/YYYY');
     console.log(this.text);
-
+    console.log('cards');
+    console.log(this.cards);
   }
 
 }

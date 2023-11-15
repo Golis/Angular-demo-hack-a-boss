@@ -1,6 +1,10 @@
+<ng-template #blankImage>
+    <img src="../../assets/img_not_available.jpg" alt="Avatar" style="width: 175px;">
+</ng-template>
+
 <div  class="card">
         <span [ngClass]="employee.rank">
-            <img  src="{{employee.iconUrl}}" alt="Avatar" style="width:80%">
+            <img *ngIf="employee.iconUrl; else blankImage"  src="{{employee.iconUrl}}" alt="Avatar" style="width:80%">
             <div class="container">
             <h4><b [ngStyle]="onCheckRank(employee.rank)">{{employee.name}}</b></h4>
             <p>{{employee.rank}}</p>
@@ -13,3 +17,4 @@
             <button (click)="onEmployeeChecked(employee)">Check Employee</button>
         </span>
 </div>
+<ng-content select=".content1"></ng-content>
