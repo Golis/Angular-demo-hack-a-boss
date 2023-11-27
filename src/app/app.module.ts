@@ -12,6 +12,8 @@ import { CarditemComponent } from './components/carditem/carditem.component';
 import { DeeperDirectivesComponent } from './components/deeper-directives/deeper-directives.component';
 import { HighlightedDirective } from './directives/highlighted.directive';
 import { NgxUnlessDirective } from './directives/ngx-unless.directive';
+import { HttpClient, HttpClientModule  } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -28,9 +30,10 @@ import { NgxUnlessDirective } from './directives/ngx-unless.directive';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
