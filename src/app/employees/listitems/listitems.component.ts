@@ -1,10 +1,11 @@
 import { DatePipe } from '@angular/common';
-import { Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
 //import { employees } from 'src/assets/fixtures/employees';
 import { Employee } from 'src/models/employee';
 import { CarditemComponent } from '../carditem/carditem.component';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { MockServiceService } from 'src/app/services/mock-service.service';
+import { TranslateService } from 'src/app/services/translate.service';
 
 @Component({
   selector: 'app-listitems',
@@ -19,6 +20,7 @@ export class ListitemsComponent {
 
   selectedEmployee?: Employee;
   employees: any;
+  employees$?: Observable<Employee[]>;
   today = new Date();
   datepipe: DatePipe = new DatePipe('en-US')
   text?: any;
@@ -28,19 +30,26 @@ export class ListitemsComponent {
   thirdEmployee = employees[2];
   fourthEmployee = employees[3];*/
 
-  constructor(private mockService: MockServiceService){
-    console.log('constructor');
+  constructor(private mockService: MockServiceService,
+    private cd: ChangeDetectorRef,
+    private translateService: TranslateService){
     console.log(this.todayRef?.nativeElement.innerText);
   }
 
   ngOnInit(){
-    console.log('ngOnInit');
+    //this.employees$ = this.mockService.getEmployees();
     this.subscription = this.mockService.getEmployees().subscribe(
       data=> {
         this.employees = data;
       }
     )
+
+    this.translateService.use('eng', undefined);
   }
+
+  /*ngDoCheck(){
+    this.cd.markForCheck();
+  }*/
 
   onEmployeeChecked(employee: Employee){
     this.selectedEmployee = employee;
@@ -56,6 +65,18 @@ export class ListitemsComponent {
     console.log(this.text);
     console.log('cards');
     console.log(this.cards);
+  }
+
+
+  onEdit(){
+    this.employees[0].name='Push Test';
+  }
+
+  ngOnDestroy(){
+    console.log('ngOnDestroy');
+    if (this.subscription){
+      this.subscription.unsubscribe();
+    }
   }
 
 }
