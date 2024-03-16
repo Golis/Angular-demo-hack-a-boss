@@ -12,6 +12,10 @@ import { HighlightedDirective } from './directives/highlighted.directive';
 import { NgxUnlessDirective } from './directives/ngx-unless.directive';
 import { HttpClient, HttpClientModule  } from '@angular/common/http';
 import { EmployeesModule } from './employees/employees.module';
+import { LightswitchCompComponent } from './lightswitch-comp/lightswitch-comp.component';
+import { DashboardHeroComponent } from './dashboard-hero/dashboard-hero.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { BannerComponent } from './banner/banner.component';
 
 
 @NgModule({
@@ -23,7 +27,11 @@ import { EmployeesModule } from './employees/employees.module';
     LandingpageComponent,
     DeeperDirectivesComponent,
     HighlightedDirective,
-    NgxUnlessDirective
+    NgxUnlessDirective,
+    LightswitchCompComponent,
+    DashboardHeroComponent,
+    WelcomeComponent,
+    BannerComponent
   ],
   imports: [
     BrowserModule,
