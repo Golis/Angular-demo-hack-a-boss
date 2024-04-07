@@ -16,6 +16,7 @@ import { LightswitchCompComponent } from './lightswitch-comp/lightswitch-comp.co
 import { DashboardHeroComponent } from './dashboard-hero/dashboard-hero.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { BannerComponent } from './banner/banner.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { BannerComponent } from './banner/banner.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    EmployeesModule
+    EmployeesModule,
+    FormsModule
   ],
   providers: [HttpClient],
   bootstrap: [AppComponent]
